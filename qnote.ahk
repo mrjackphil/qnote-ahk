@@ -1,3 +1,4 @@
+Gui, Destroy
 #SingleInstance, force
 
 Gui, -Caption -ToolWindow +AlwaysOnTop +Resize
