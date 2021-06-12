@@ -20,11 +20,11 @@ if (BodyText == "") {
 
 if (Filename == "") {
 	FormatTime, CurrentDateTime,, yyMMddHHmmss
-	FileAppend, `n%BodyText%, .\%CurrentDateTime%.md, UTF-8
-	FileAppend, `n#qnote, .\%CurrentDateTime%.md, UTF-8
+	FileAppend, %BodyText%, .\%CurrentDateTime%.md, UTF-8-RAW
+	FileAppend, `n#qnote, .\%CurrentDateTime%.md, UTF-8-RAW
 } else {
-	FileAppend, `n%BodyText%, .\%Filename%.md, UTF-8
-	FileAppend, `n#qnote, .\%Filename%.md, UTF-8
+	FileAppend, %BodyText%, .\%Filename%.md, UTF-8-RAW
+	FileAppend, `n#qnote, .\%Filename%.md, UTF-8-RAW
 }
 
 GuiControl,, BodyText, 
