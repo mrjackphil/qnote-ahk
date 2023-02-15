@@ -8,11 +8,15 @@ Gui, Add, Edit, W600 R15 vBodyText
 Gui, Add, Text,, Filename
 Gui, Add, Edit, vFilename, 
 
-^j::
-Gui, Show,,
-return
+isDisplayed := false
 
-^k::
+^j::
+if(!isDisplayed){
+Gui, Show,,
+isDisplayed := true
+}else{
+isDisplayed := false
+
 Gui, Submit
 if (BodyText == "") {
 	return
@@ -30,4 +34,7 @@ if (Filename == "") {
 GuiControl,, BodyText, 
 
 Gui, Hide
+return
+}
+
 return
